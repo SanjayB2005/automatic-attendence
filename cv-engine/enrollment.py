@@ -8,7 +8,7 @@ from PIL import Image
 from io import BytesIO
 
 class StudentEnrollment:
-    def __init__(self, embeddings_file='student_embeddings.pkl', models_dir='../client/public/models'):
+    def __init__(self, embeddings_file='student_embeddings.pkl', models_dir='uploads/students'):
         self.embeddings_file = embeddings_file
         self.models_dir = models_dir
         self.known_face_encodings = []
@@ -109,8 +109,7 @@ if __name__ == "__main__":
     # Test the enrollment process
     enrollment = StudentEnrollment()
     
-    test_photo = input("Enter path to test photo: ")
     test_student_id = input("Enter student ID: ")
     
-    result = enrollment.process_enrollment_photo(test_photo, test_student_id)
+    result = enrollment.process_enrollment_photo(test_student_id)
     print(result)
